@@ -44,13 +44,12 @@ public class Majority{
 			limitOfChecking = listOfElements.size() / 2 - 1;//if size is even
 		else
 			limitOfChecking = listOfElements.size() / 2;// if size not even
-        int i = 0;
-        while(i <= limitOfChecking){
-            if(listOfElements.get(i) == listOfElements.get(i + halfSizeOfArray)) //is it better to have an local Integer to represent listOfElements.get(i)?
-                return listOfElements.get(i);
-            i = listOfElements.lastIndexOf(listOfElements.get(i)) + 1;
-            
-        }
+		int i = 0;
+		while(i <= limitOfChecking){
+		if(listOfElements.get(i) == listOfElements.get(i + halfSizeOfArray)) //is it better to have an local Integer to represent listOfElements.get(i)?
+				return listOfElements.get(i);
+		i = listOfElements.lastIndexOf(listOfElements.get(i)) + 1;  
+		}
 		return null;
 	}
 
