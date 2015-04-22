@@ -1,0 +1,27 @@
+EXERCISE 1
+Write a boolean function isInDictionary() that accepts a string parameter containing a word and returns true if the word is in the dictionary.  The dictionary you are to use is packaged as a class named TrivialDictionary.  It has a single static function named TrivialDictionary.wordAt(). This function has a single input, an integer index, and it returns the word at that index as a string, or null if the index is out of range.
+For extra points:  Modify isInDictionary() to keep information from prior calls and use it to speed up the function (i.e., reduce the number of calls you have to make to TrivialDictionary.wordAt()).
+
+/*Questions:
+
+How big is the dictionary? - > n
+Does it has a hash function?
+If it is a dictionary, the words must be sorted, right?
+Can the dictionary be empty?
+
+
+Approach
+Make a hashtable with all the words in the dictionary, this would just  execute once O(n), then the time is constant: O(1)
+*/
+
+Hashtable<String, Integer> dictionaryTable = new Hashtable<String, Integer>(n);
+
+public static void fillTable(int sizeOfDictionary){
+	for(int i = 0; i < sizeOfDictionary; i++){
+		dictionaryTable.put(TrivialDictionary.wordAt(i), i);
+	}
+}
+
+public static boolean isInDictionary(String word){
+	return dictionaryTable.containsValue(word);
+}
