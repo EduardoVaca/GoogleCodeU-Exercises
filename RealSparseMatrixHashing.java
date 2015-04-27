@@ -29,7 +29,8 @@ public class RealSparseMatrixHashing{
 	}
 
 	public void setWithHash(int row_index, int col_index, int value){
-		if(row_index > -1 && col_index > -1 && row_index < rowDimension() && col_index < columnDimension()){ // validations for keeping a matrix properties
+		if(row_index > -1 && col_index > -1 && row_index < rowDimension() 
+						&& col_index < columnDimension()){ // validations for keeping a matrix properties
 			Integer key[] = new Integer[2];
 			key[0] = row_index;
 			key[1] = col_index;
@@ -38,7 +39,8 @@ public class RealSparseMatrixHashing{
 	}
 
 	public Integer getWithHash(int row_index, int col_index){
-		if(row_index > -1 && col_index > -1 && row_index < rowDimension() && col_index < columnDimension()){ // validations for keeping a matrix properties
+		if(row_index > -1 && col_index > -1 && row_index < rowDimension() 
+						&& col_index < columnDimension()){ // validations for keeping a matrix properties
 			Integer key[] = new Integer[2];			
 			key[0] = row_index;
 			key[1] = col_index;
@@ -61,5 +63,12 @@ public class RealSparseMatrixHashing{
 		System.out.println("Number at 3, 2: " + matrix.getWithHash(3,2));
 		System.out.println("Number at -1, -1: " + matrix.getWithHash(-1,-1));	
 	}
+
+	/*Output:
+	Number at 1, 1: 100
+	Number at 2, 1: 0
+	Number t 3, 2: 95
+	Number at -1, -1: null
+	*/
 
 }
