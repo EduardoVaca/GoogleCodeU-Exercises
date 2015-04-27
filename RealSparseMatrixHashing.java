@@ -10,35 +10,13 @@ import java.util.Hashtable;
 
 public class RealSparseMatrixHashing{
 
-	private int rows, cols;
-	private ArrayList <Row> list_row;
+	private int rows, cols;	
 	private Hashtable <Integer, Integer> matrixHashTable;
 
-	private class Point{
-		int row;		
-		int col;
-		int value;
-		Point(int rowIn, int colIn, int valueIn){
-			row = rowIn;
-			col = colIn;
-			value = valueIn;
-		}
-	}
-
-	private class Row{
-		private ArrayList<Point> list_points;
-		Row(){
-			list_points = new ArrayList<Point>();
-		}
-	}
 
 	public RealSparseMatrixHashing(int rows, int cols){
 		this.rows = rows;
 		this.cols = cols;
-		//matrix = new int [rows][cols];
-		list_row =  new ArrayList<Row>();
-		for (int i = 0; i < rows; i++)
-			list_row.add(new Row());
 		matrixHashTable = new Hashtable<Integer, Integer>();
 	}
 
