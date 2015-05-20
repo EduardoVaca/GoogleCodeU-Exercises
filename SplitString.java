@@ -32,3 +32,7 @@ public static String splitStringByDiccionary(String s){
 	}
 	return "Not in Dictionary";
 }
+
+/*How about binary search??? 
+If you could have a method thta tells you if a string is a substring of a word saved in the dictionary, binary
+search would be a great approach, you use it in the input string*/
